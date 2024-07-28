@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'screens/home.dart';
+
+// Main script for the entire app.
 void main() {
   runApp(const MyApp());
 }

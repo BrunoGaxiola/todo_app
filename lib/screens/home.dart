@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:todo_app/constants/colors.dart';
 
+// Home.
 class Home extends StatelessWidget {
   const Home({super.key});
 
@@ -10,11 +12,45 @@ class Home extends StatelessWidget {
       backgroundColor: tdBGColor,
       appBar: _buildAppBar(),
       body: Container(
-        child: Text("This is the Home Screen")
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+        child: Column(
+          children: [
+           searchBox(),
+          ],
+        ),
+      ),
+    );
+  }
+  
+  // Widget para la caja de búsqueda.
+  Widget searchBox() {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 15),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: TextField(
+        decoration: InputDecoration(
+          contentPadding: EdgeInsets.all(0),
+          prefixIcon: Icon(
+            Icons.search,
+            color: tdBlack,
+            size: 20,
+          ),
+          prefixIconConstraints: BoxConstraints(
+            maxHeight: 20,
+            minWidth: 25
+          ),
+          border: InputBorder.none,
+          hintText: "Search",
+          hintStyle: TextStyle(color: tdGrey),
+        ),
       ),
     );
   }
 
+  // AppBar encerrado como método.
   AppBar _buildAppBar() {
     return AppBar(
       backgroundColor: tdBGColor,
